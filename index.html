@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="./normalize.css">
+	<link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+	<div class="container flex m-inline margin-inline mx-auto h-full">
+		<div class="w-3/6 mx-auto flex flex-col">
+			<div class="column h-1/6 flex border-black border-solid border">
+				<div class="h-full w-2/6 text-center flex flex-col justify-center" id="passive" data-counter></div>
+				<div class="h-full w-2/6 text-center flex flex-col justify-center border-l-black border-l-solid border-l border-r-black border-r-solid border-r" id="counter" data-counter></div>
+				<div class="h-full w-2/6 text-center flex flex-col justify-center" id="multiplyer" data-counter></div>
+			</div>
+			<div class="column h-5/6 flex">
+				<div class="column w-3/6 flex items-center justify-center h-full border-l-black border-l-solid border-l">
+					<button id="primary-button" type="button" class="bg-slate-300 px-12 py-12 rounded-full"></button>
+				</div>
+				<div class="column w-3/6 h-full flex flex-wrap justify-around items-start content-start p-4 gap-4 border-l-black border-l-solid border-l border-r-black border-r-solid border-r" id="bonus">
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="./script.js"></script>
+</body>
+</html>
