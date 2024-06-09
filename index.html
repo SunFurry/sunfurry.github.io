@@ -6,27 +6,37 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<script src="https://cdn.tailwindcss.com"></script>
-	<link rel="stylesheet" href="./normalize.css">
-	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 	<div class="container flex m-inline margin-inline mx-auto h-full">
 		<div class="w-3/6 mx-auto flex flex-col">
 			<div class="column h-1/6 flex border-black border-solid border">
-				<div class="h-full w-2/6 text-center flex flex-col justify-center" id="passive" data-counter></div>
-				<div class="h-full w-2/6 text-center flex flex-col justify-center border-l-black border-l-solid border-l border-r-black border-r-solid border-r" id="counter" data-counter></div>
-				<div class="h-full w-2/6 text-center flex flex-col justify-center" id="multiplyer" data-counter></div>
+				<div class="h-full w-2/6 text-center flex flex-col justify-center" id="income" data-counter>
+					Income per 5 second:
+				</div>
+				<div class="h-full w-2/6 text-center flex flex-col justify-center border-l-black border-l-solid border-l border-r-black border-r-solid border-r" id="score" data-counter>
+					Total:
+				</div>
+				<div class="h-full w-2/6 text-center flex flex-col justify-center" id="multiplier" data-counter>
+					Per click:
+				</div>
 			</div>
 			<div class="column h-5/6 flex">
 				<div class="column w-3/6 flex items-center justify-center h-full border-l-black border-l-solid border-l">
-					<button id="primary-button" type="button" class="bg-slate-300 px-12 py-12 rounded-full"></button>
+					<button id="primary-button" type="button" class="btn px-12 py-12 rounded-full"></button>
 				</div>
-				<div class="column w-3/6 h-full flex flex-wrap justify-around items-start content-start p-4 gap-4 border-l-black border-l-solid border-l border-r-black border-r-solid border-r" id="bonus">
+				<div class="column w-3/6 h-full grid grid-cols-2 content-start p-4 gap-4 border-l-black border-l-solid border-l border-r-black border-r-solid border-r" id="bonus">
 				</div>
 			</div>
 		</div>
 	</div>
-	<script src="./script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+	<script type="module" src="js/counter.js"></script>
+	<script type="module" src="js/bonus.js"></script>
+	<script type="module" src="js/script.js"></script>
 </body>
 </html>
