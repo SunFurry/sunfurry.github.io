@@ -10,16 +10,16 @@ window.score = new Score('score');
 window.obBonus = {};
 
 function setBonus() {
-	window.obBonus.wooden = new Bonus('wooden', 1, 10);
-	window.obBonus.copper = new Bonus('copper', 10, 100);
-	window.obBonus.tin = new Bonus('tin', 20, 200);
-	window.obBonus.iron = new Bonus('iron', 50, 500);
-	window.obBonus.bronze = new Bonus('bronze', 100, 1000);
-	window.obBonus.silver = new Bonus('silver', 200, 2000);
-	window.obBonus.gold = new Bonus('gold', 500, 5000);
-	window.obBonus.platinum = new Bonus('platinum', 1000, 10000);
-	window.obBonus.orichalcum = new Bonus('orichalcum', 2000, 20000);
-	window.obBonus.adamantium = new Bonus('adamantium', 5000, 50000);
+	window.obBonus.slate = new Bonus('slate', 1, 10);
+	window.obBonus.zink = new Bonus('zinc', 10, 100);
+	window.obBonus.red = new Bonus('red', 20, 200);
+	window.obBonus.orange = new Bonus('orange', 50, 500);
+	window.obBonus.amber = new Bonus('amber', 100, 1000);
+	window.obBonus.lime = new Bonus('lime', 200, 2000);
+	window.obBonus.emerald = new Bonus('emerald', 500, 5000);
+	window.obBonus.cyan = new Bonus('cyan', 1000, 10000);
+	window.obBonus.fuchsia = new Bonus('fuchsia', 2000, 20000);
+	window.obBonus.rose = new Bonus('rose', 5000, 50000);
 }
 
 function checkBonus() {

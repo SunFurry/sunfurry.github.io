@@ -25,7 +25,7 @@ export class Bonus {
 	_addItem(name) {
 		this.node = document.createElement('button');
 		this.node.title = name;
-		this.node.classList.add('bonus', 'text-sm', 'box', 'border', 'py-5', 'flex', 'items-center', 'justify-center', 'rounded');
+		this.node.classList.add('bonus', 'text-sm', 'box', 'border', 'py-5', 'flex', 'items-center', 'justify-center', 'rounded', `bg-${this.name}-700`);
 		this.node.disabled = true;
 		this.node.innerText = "₽ " + new Intl.NumberFormat("ru-RU").format(this.income);
 		this.node.dataset.cost = new Intl.NumberFormat("ru-RU").format(this.cost);
@@ -73,7 +73,7 @@ export class Bonus {
 	}
 
 	checkActive() {
-		this.node.disabled = this.level < 50 && window.score.value < this.cost;
+		this.node.disabled = (this.level > 49) || (window.score.value < this.cost);
 	}
 
 	getIncome() {
