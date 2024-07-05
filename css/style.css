@@ -47,7 +47,7 @@ button:disabled {
 	background-color: #c3c3c3;
 }
 
-.primary-button {
+#primary-button {
 	background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/66/SmileyFace.png');
 	background-size: cover;
 }
