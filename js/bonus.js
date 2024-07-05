@@ -113,13 +113,13 @@ export class Bonus {
 	}
 
 	setIncomeValue(value) {
-		this.income = value;
-		this.node.innerText = "₽ " + new Intl.NumberFormat("ru-RU").format(value);
+		this.income = Math.ceil(value);
+		this.node.innerText = "₽ " + new Intl.NumberFormat("ru-RU").format(this.income);
 	}
 
 	setCostValue(value) {
-		this.cost = value;
-		this.node.dataset.cost = new Intl.NumberFormat("ru-RU").format(value);
+		this.cost = Math.ceil(value);
+		this.node.dataset.cost = new Intl.NumberFormat("ru-RU").format(this.cost);
 	}
 
 	setLevel(value) {
