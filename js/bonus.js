@@ -2,9 +2,12 @@ export class Bonus {
 	node;
 	level = 0;
 	income = 0;
-	const = 0;
+	cost = 0;
 
 	constructor(name, income, cost) {
+		this.obBase.income = income;
+		this.obBase.cost = cost;
+
 		let item = localStorage.getItem(`bonus_${name}`);
 		item = item ? JSON.parse(item) : {};
 
@@ -39,11 +42,11 @@ export class Bonus {
 		this.level += 1;
 		this.node.dataset.level = this.level < 50 ? this.level : 'max';
 
-		this.cost = Math.round(this.cost * 1.5);
+		this.cost = Math.round(this.cost * 1.4);
 		this.node.dataset.cost = new Intl.NumberFormat("ru-RU").format(this.cost);
 		
 		if (this.level > 1) {
-			this.income = Math.ceil(this.income * 1.2);
+			this.income = Math.ceil(this.income * 1.3);
 			this.node.innerText = "₽ " + new Intl.NumberFormat("ru-RU").format(this.income);
 		}
 
@@ -108,5 +111,10 @@ export class Bonus {
 		}
 
 		window.score.multiplier.set(multiplier);
+	}
+
+	reset() {
+		this.level = this.income = this.cost = 0;
+		localStorage.removeItem(`bonus_${this.name}`);
 	}
 }

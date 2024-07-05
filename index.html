@@ -16,7 +16,7 @@
 		<div class="w-3/6 mx-auto flex flex-col">
 			<div class="column h-1/6 flex border-black border-solid border">
 				<div class="h-full w-2/6 text-center flex flex-col justify-center" id="income" data-counter>
-					Income per 5 second:
+					Income per second:
 				</div>
 				<div class="h-full w-2/6 text-center flex flex-col justify-center border-l-black border-l-solid border-l border-r-black border-r-solid border-r" id="score" data-counter>
 					Total:
@@ -25,7 +25,8 @@
 					Per click:
 				</div>
 			</div>
-			<div class="column h-5/6 flex">
+			<div class="column h-5/6 flex relative">
+				<button type="button" id="reset" class="btn border">Reset</button>
 				<div class="column w-3/6 flex items-center justify-center h-full border-l-black border-l-solid border-l">
 					<button id="primary-button" type="button" class="btn px-12 py-12 rounded-full"></button>
 				</div>
