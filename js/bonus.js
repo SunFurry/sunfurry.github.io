@@ -1,4 +1,8 @@
 export class Bonus {
+	obBase = {
+		income: 0,
+		cost: 0,
+	};
 	node;
 	level = 0;
 	income = 0;
@@ -39,15 +43,10 @@ export class Bonus {
 
 		window.score.change(this.cost * -1);
 
-		this.level += 1;
-		this.node.dataset.level = this.level < 50 ? this.level : 'max';
-
-		this.cost = Math.round(this.cost * 1.4);
-		this.node.dataset.cost = new Intl.NumberFormat("ru-RU").format(this.cost);
-		
+		this.setLevel(this.level+1);
+		this.setCostValue(this.cost * 1.4);
 		if (this.level > 1) {
-			this.income = Math.ceil(this.income * 1.3);
-			this.node.innerText = "₽ " + new Intl.NumberFormat("ru-RU").format(this.income);
+			this.setIncomeValue(this.income * 1.3);
 		}
 
 		if (this.level%5 === 0) {
@@ -113,8 +112,25 @@ export class Bonus {
 		window.score.multiplier.set(multiplier);
 	}
 
+	setIncomeValue(value) {
+		this.income = value;
+		this.node.innerText = "₽ " + new Intl.NumberFormat("ru-RU").format(value);
+	}
+
+	setCostValue(value) {
+		this.cost = value;
+		this.node.dataset.cost = new Intl.NumberFormat("ru-RU").format(value);
+	}
+
+	setLevel(value) {
+		this.level = value;
+		this.node.dataset.level = value < 50 ? value : 'max';
+	}
+
 	reset() {
-		this.level = this.income = this.cost = 0;
+		this.setLevel(0);
+		this.setIncomeValue(this.obBase.income);
+		this.setCostValue(this.obBase.cost);
 		localStorage.removeItem(`bonus_${this.name}`);
 	}
 }
